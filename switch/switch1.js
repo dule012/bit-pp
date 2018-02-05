@@ -92,4 +92,22 @@ switch (month1) {
 
 }
 
+//zadatak 1
+var months = ["Jan","Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Oct", "Nov", "Dec"];
+console.log(months[5]);
+console.log(months[8]);
+console.log(months[0]);
+
+
+//zadatak 2
+var days = ["Monday","Tuesday","Wensday","Thursdau","Friday","Saturday","Sunday"];
+console.log(days[6]);
+
+//zadatak 3
+ var numbers = [2, -4, 5, -2, -11];
+ console.log(numbers[1], number[3], number[4]);
+ console.log(numbers[3]);
+ console.log(numbers[4]);
+
+
 
