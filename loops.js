@@ -167,28 +167,67 @@ var u;
 var z;
 var q;
 for (j = 0; j < f.length; j++) {
-    for(u = 0; u < f.length; u++){
-    if (f[u] < h ) {
-        h = f[u];
-        position1 = u;
-        z = f[position1];
+    for (u = 0; u < f.length; u++) {
+        if (f[u] < h) {
+            h = f[u];
+            position1 = u;
+            z = f[position1];
+        }
+        if (f[u] > k) {
+            k = f[u];
+            position2 = u;
+            q = f[position2];
+        }
     }
-    if (f[u] > k) {
-        k = f[u];
-        position2 = u;
-        q = f[position2];
+    if (j == position1) {
+        f[j] = q;
     }
- }
- if (j == position1){
-    f[j] = q;
- }
- if (j == position2){
-     f[j] = z;
- }
+    if (j == position2) {
+        f[j] = z;
+    }
 }
-console.log(k + " max pozicija "+ position2);
+console.log(k + " max pozicija " + position2);
 console.log(h + " min pozcija " + position1);
 console.log(f[1]);
 console.log(f[4]);
+
+
+
+//Function excercises 11.zadatak
+
+var a = ["1", "2", undefined, "1e+3", Infinity, "21"];
+var b = [];
+function checkString() {
+    var position = 0;
+    for (var i = 0; i < a.length; i++) {
+        if (typeof (a[i]) === "string") {
+            if (a[i] == Number(a[i])) {
+                b[position] = Number(a[i]);
+                position++
+
+            }
+        }
+    }
+    return b;
+}
+console.log(checkString(a, b));
+
+
+// Pravljenje trougla od hashtagova
+function triangle() {
+    var hash = '#';
+    var sum = '';
+    var i = 0;
+    for (i = 0; i < 7; i++) {
+        var j = 0;
+        while (j < i){
+            sum += hash;
+            j++;
+        }
+        sum += '\n';
+    }
+    return sum;
+}
+console.log(triangle());
 
 
