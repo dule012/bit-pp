@@ -162,30 +162,148 @@ console.log(totalPrice(obj1.price, obj2.price, obj3.price));
 var average = function (a, b, c) {
     return (a + b + c) / arguments.length;
 }
-
 console.log(average(obj1.price, obj2.price, obj3.price));
+//d)
+function maxPrice(a, b, c) {
+    var max = arguments[0];
+    for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+console.log(maxPrice(obj1.price, obj2.price, obj3.price));
 
 
 
 
-//zadatak 7 a)  zavrsiti do kraja 
+//zadatak 7 a) 
 
 
 //aBcDe56 --> ABCDE56
 //AFRGF78 --> AFRGF78 
 //s.toUpperCase() == s
+
+//a)
 var capitals = function (a) {
     var b = [];
     for (var i = 0; i < a.length; i++) {
         for (var j = 0; j < a[i].length; j++) {
-            if (!(a[i].charCodeAt(a[i][j]) >= 65 && a[i].charCodeAt(a[i][j]) < 90)) {
-               break;
-                
-            } 
+            if (a[i].charCodeAt(j) >= 65 && a[i].charCodeAt(j) <= 90) {
+                b[i] = "Velika su sva slova";
+            } else {
+                b[i] = "Nisu sva velika slova";
+                break;
+            }
         }
-        b[i] = "Velika slova";
     }
     return b;
 }
 
 console.log(capitals(['DA', 'Ne', 'MoZdA']));
+
+//b)
+
+var digit = function (s) {
+    var b = [];
+    for (var i = 0; i < s.length; i++) {
+        for (var j = 0; j < s[i].length; j++) {
+            if (s[i][j] == 0 || s[i][j] == 1 || s[i][j] == 2 || s[i][j] == 3 || s[i][j] == 4 || s[i][j] == 5 || s[i][j] == 6 || s[i][j] == 7 || s[i][j] == 8 || s[i][j] == 9) {
+                b[i] = 'ima broj!';
+                break;
+            } else {
+                b[i] = 'nema broj!';
+            }
+        }
+    }
+    return b;
+}
+console.log(digit(['5', 'lk', 'sddtrewq2']));
+
+// c) ??????
+// d) ?????
+// e) ?????
+
+
+//zadatak 8
+var date1 = new Date();
+var date2 = new Date('Mar 20 2018');
+
+var Birthday = function (n, m) {
+    var birthday = Math.ceil((n - m) / 86400000);
+    return birthday;
+}
+
+console.log(Birthday(date2, date1));
+
+//zadatak 9
+
+
+var hour1 = new Date('20 Feb 2018 8:22:13');
+var hour2 = new Date('20 Feb 2018 11:43:22');
+
+var today = function (k, l) {
+    var datum = new Date(k - l);
+    var diference1 = datum.getHours() + ':' + datum.getMinutes() + ':' + datum.getSeconds();
+    return diference1;
+}
+console.log(today(hour2, hour1));
+
+
+//zadatk 10
+
+function Cords(value1, value2, value3) {
+    this.x = value1;
+    this.y = value2;
+    this.z = value3;
+}
+
+var position1 = new Cords(3, 5, 1);
+var position2 = new Cords(4, -2, 3);
+
+for (p in position1) {
+    console.log(position1[p]);
+}
+
+function dif_in_space(a, b) {
+    var razlika = Math.sqrt(Math.pow((a.x - b.x), 2) + Math.pow((a.y - b.y), 2) + Math.pow((a.z - b.z), 2));
+    return razlika;
+}
+console.log(dif_in_space(position1, position2));
+
+
+//zadatak 11
+
+//a)
+var randomValue1 = function () {
+    var min = 5;
+    var max = 20;
+    var r = Math.round((max - min) * Math.random() + min);
+    return r;
+}
+console.log(randomValue1());
+
+//b)
+
+var randomValue2 = function () {
+    var min = 50;
+    var max = 100;
+    var r = Math.round((max - min) * Math.random() + min);
+    return r;
+}
+console.log(randomValue2());
+
+//c)
+
+var a = function (n, f) {
+    var b = [];
+    for (var i = 0; i < n; i++) {
+        b[i] = f();
+    }
+    return b;
+}
+
+console.log(a(5,randomValue1));
+
+
