@@ -220,7 +220,7 @@ function triangle() {
     var i = 0;
     for (i = 0; i < 7; i++) {
         var j = 0;
-        while (j < i){
+        while (j < i) {
             sum += hash;
             j++;
         }
@@ -230,4 +230,181 @@ function triangle() {
 }
 console.log(triangle());
 
+
+
+
+
+print("This might work or not?");
+
+var print = (function () {
+    return console.log;
+})();
+
+
+
+var PI = 3.1;
+
+function circleSurface(radius) {
+    var result = radius * radius * PI;
+    var PI = 3.14159;
+
+    return result;
+}
+
+var output = circleSurface(5);
+console.log(output);
+
+
+
+
+var cubeVolume = function (a) {
+    return a * a * a;
+}
+
+function cubeCalculation(a, calc) {
+    return calc(a);
+}
+
+output = cubeCalculation(10, cubeVolume(6))
+console.log(output);
+
+
+function saySomething(msg1) {
+    function message(msg2) {
+        var output = msg1 + " " + msg2;
+        var result = function () {
+            output += "!"
+            console.log(output);
+        }
+        return result;
+    }
+    return message;
+}
+
+saySomething("Hi")("there")()
+
+
+
+function unless(test, then) {
+    if (test == 0) then();
+}
+function repeat(times, body) {
+    for (var i = 0; i < times; i++) body(i);
+}
+
+repeat(3, function (n) {
+    unless(n % 2, function () {
+        console.log(n, "is even");
+    });
+});
+// → 0 is even
+// → 2 is even
+
+
+
+window.onclick = function (e) {
+    if (!e.target.matches('.dropbtn')) {
+        document.getElementById("myDropdown").classList.remove('show');
+    }
+}
+
+
+
+
+
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            if (dropdowns[i].classList.contains('show')) {
+                dropdowns[i].classList.remove('show');
+            }
+        }
+    }
+}
+
+
+
+
+function zvezda(n) {
+    var a = '';
+    for (var i = 0; i < n; i++) {
+        if (i === 0 || i === n - 1) {
+            for (var j = 0; j < n; j++) {
+                a += '*';
+            }
+        } else {
+            for (var j = 0; j < n; j++) {
+                if (j === 0 || j === n - 1) {
+                    a += '*';
+                } else {
+                    a += ' ';
+                }
+            }
+        }
+        a += '\n';
+
+    }
+    return a;
+}
+console.log(zvezda(5));
+
+var a = [3, 4, 5, 7, 1];
+
+function mini(n) {
+    var min = n[2];
+    for (var i = 0; i < n.length; i++) {
+        if (a[i] < min) {
+            min = a[i];
+        }
+    }
+    return min;
+}
+console.log(mini(a));
+
+//zadatak 10
+var s = 'saDa';
+
+function probamo(n) {
+    var f = '';
+    for (var i = 0; i < n.length; i++) {
+        if (n[i] == n[i].toLowerCase()) {
+            f += n[i].toUpperCase();
+        } else if (n[i] == n[i].toUpperCase()) {
+            f += n[i].toLowerCase();
+        }
+    }
+
+    return f;
+}
+console.log(probamo(s));
+
+
+//
+
+var removeMultipleElements = function (a) {
+    var b = [];
+
+    for (var i = 0; i < a.length; i++) {
+        var counter = 0;
+        for (var j = 0; j < a.length; j++) {
+            if (a[i] == a[j]) {
+                counter++;
+            }
+        }
+        if (counter > 1) {
+            a.splice(i, 1);
+        } else {
+            b[i] = a[i];
+        }
+    }
+    b = a;
+    var c = b.sort(function (a, b) { return a - b; });
+    return c;
+
+}
+
+console.log(removeMultipleElements([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
 
