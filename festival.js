@@ -21,9 +21,10 @@
             return this.title + ', ' + this.length + 'min ' + ', ' + genre.getData();
         }
     }
-    var movie1 = new Movie('Wrong Turn', action, 100);
+    var movie1 = new Movie('Wrong Turn', 'action', 100);
     console.log(movie1.getData());
-    var movie2 = new Movie('Maratonci','Comedy',90);
+    var movie2 = new Movie('Maratonci', 'Comedy', 90);
+    
 
     function Program(date) {
         this.date = new Date(date);
@@ -50,10 +51,11 @@
         }
     }
 
-    var program1 = new Program('Mar 25 2019');
+    var program1 = new Program('Mar 25 2018');
     program1.addMovie(movie1);
     program1.addMovie(movie2);
     console.log(program1.ListOfMovies);
+    var program2 = new Program('Mar 29 2018');
 
 
     function Festival(name, AllMoviesInAllPrograms) {
@@ -82,14 +84,28 @@
         }
     }
 
-/*(function(){
-    fucntion CreateMovie(movie){
-        return
-    }
-})(movie);
-*/
-})();
+    function createMovie(title, length, genre) {
+        var newMovie = new Movie(title, length, genre);
+        return newMovie;
+    };
 
+    var createMovie1 = createMovie("Valter brani Sarajevo", 250, 'comedy');
+    var createMovie2 = createMovie('Ko to tamo peva', 'action', 213);
+    var createMovie3 = createMovie('Lajanje na zvezde', 'drama', 124);
+    var createMovie4 = createMovie('Varljivo leto 68', 'action', 111);
+
+
+    function createProgram(date) {
+        var newProgram = new Program(date);
+        return newProgram;
+    }
+
+    var createProgram1 = createProgram("Mar 27 2018");
+
+    var createProgram2 = createProgram('Mar 30 2018');
+
+
+})();
 
 
 
