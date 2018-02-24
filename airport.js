@@ -24,6 +24,7 @@
         }
     }
     var seatA = new Seat(1, 'b');
+    console.log(seatA.getData());
     var seatB = new Seat(2, 'b');
     var seatC = new Seat(14);
     var seatD = new Seat();
@@ -89,7 +90,7 @@
             for (var d = 0; d < this.listOfFlights.length; d++) {
                 airportInfo += '\t' + this.listOfFlights[d].date + ', ' + this.listOfFlights[d].relation + '\n';
                 for (var g = 0; g < this.listOfFlights[d].listOfPassengers.length; g++) {
-                    airportInfo += '\t' + '\t' + this.listOfFlights[d].listOfPassengers[g].seat.getData() + this.listOfFlights[d].listOfPassengers[g].person.getData() + '\n';
+                    airportInfo += '\t' + '\t' + this.listOfFlights[d].listOfPassengers[g].seat.getData() + ', '+ this.listOfFlights[d].listOfPassengers[g].person.getData() + '\n';
                 }
             }
             return airportInfo;
