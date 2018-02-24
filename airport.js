@@ -24,7 +24,6 @@
         }
     }
     var seatA = new Seat(1, 'b');
-    console.log(seatA.getData());
     var seatB = new Seat(2, 'b');
     var seatC = new Seat(14);
     var seatD = new Seat();
