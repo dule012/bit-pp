@@ -35,6 +35,15 @@
         this.getData = function () {
             return this.seat.number + ', ' + this.seat.category.toUpperCase() + ', ' + this.person.name.charAt(0).toUpperCase() + this.person.surname.charAt(0).toUpperCase();
         }
+        /*Extra: 
+        this.getData = function(category) {
+            if (this.seat.category === 'b'){
+                return this.seat.category = category || 'buisiness';
+            }else {
+                return this.seat.category = category || 'economy';
+            }
+        }
+        */
     }
 
     var passengerA = new Passenger(personA, seatA);
@@ -52,6 +61,51 @@
         this.addPassanger = function (passenger) {
             this.listOfPassengers.push(passenger);
         }
+        /*Extra: this.addPassanger = function(passenger) {
+            this.listOfPassangers.push(passanger);
+             this.listOfPassangers.length = 99;
+
+
+            Extra: 
+            var counter;
+            var position;
+             for (var i = 0; i < this.listOfPassangers.length; i++) {
+                 counter = 0;
+                 for (var j = 0; j < this.listOfPassengers.length; j++) {
+                     position = 0;
+                     if (this.listOfPassenger[i].seat.number === this.listOfPassenger[j].seat.number) {
+                         counter++;
+                     }
+                     for (var k = 0; k < this.listOfPassengers.length; k++) {
+                         if (this.listOfPassengers[k] === 'undefined'){
+                            position = k;
+                            break;
+                         }
+                     }
+                     if (counter > 1) {
+                         this.listOfPassengers[j].seat.number = k;
+                     }
+                 }
+             }
+        }
+        
+        Extra: 
+            var counter;
+            var number = 1;
+            for (var i = 0; i < this.listOfPassengers.length; i++) {
+                counter = 0;
+                for (var j = 0; j < this.listOfPassengers.length; j++) {
+                    if (this.listOfPassengers[i].person.getData() === this.listOfPassengers[j].getData()){
+                        counter++;
+                    }
+                    if (counter > 1 ) {
+                        this.listOfPassengers[j].person.name = 'x' + number;
+                        this.listOfPassengers[j].person.surname = 'y' + number;
+                        number++;
+                    }
+                }
+            }
+        */
         this.getData = function () {
             var flightInfo = '\t' + this.date + ', ' + this.relation + '\n';
             for (var i = 0; i < this.listOfPassengers.length; i++) {
@@ -59,6 +113,14 @@
             }
             return flightInfo;
         }
+        /*Extra: this.getData = function() {
+            var formatedString;
+            for (var i = 0; i < this.relation.length; i++) {
+                if (i === '-'){
+                formatedString += this.date + ' ' + this.realtion.charAt(0) + this.relation.charAt(i-2) + ' - '+ this.relation.charAt(i + 2) + this.relation.charAt(this.relation.length-1);
+                } 
+                return formatedString;
+            }*/
     }
 
     var flightA = new Flight('Belgrade - Paris', 'Oct 25 2017');
@@ -89,11 +151,29 @@
             for (var d = 0; d < this.listOfFlights.length; d++) {
                 airportInfo += '\t' + this.listOfFlights[d].date + ', ' + this.listOfFlights[d].relation + '\n';
                 for (var g = 0; g < this.listOfFlights[d].listOfPassengers.length; g++) {
-                    airportInfo += '\t' + '\t' + this.listOfFlights[d].listOfPassengers[g].seat.getData() + ', '+ this.listOfFlights[d].listOfPassengers[g].person.getData() + '\n';
+                    airportInfo += '\t' + '\t' + this.listOfFlights[d].listOfPassengers[g].seat.getData() + ', ' + this.listOfFlights[d].listOfPassengers[g].person.getData() + '\n';
                 }
             }
             return airportInfo;
         }
+       /* Extra:
+            this.buisinessCategory = function () {
+                var perFlight = [];
+                var counter;
+                var sumFlights = 0;
+                for (var i = 0; i < this.listOfFlights.length; i++) {
+                    counter = 0;
+                    for (var j = 0; j < this.listOfFlights.listOfPassengers.length; j++) {
+                        if (this.listOfFlights[i].listOfPassengers[j].seat.category === 'buisiness') {
+                            counter++;
+                            sumFlights++;
+                        }
+                    }
+                    perFlight[i] = counter;
+                }
+                console.log(perFlight, sumFlights);
+            }
+        */
     }
 
     var airport1 = new Airport();
@@ -121,5 +201,5 @@
     var createPassengerB = createPassenger(personB, seatB);
     var createPassengerC = createPassenger(personC, seatC);
     var createPassengerD = createPassenger(personD, seatD);
-    
+
 })();
