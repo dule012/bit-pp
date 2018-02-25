@@ -36,7 +36,7 @@
             return this.seat.number + ', ' + this.seat.category.toUpperCase() + ', ' + this.person.name.charAt(0).toUpperCase() + this.person.surname.charAt(0).toUpperCase();
         }
         /*Extra: 
-        this.getData = function(category) {
+        this.getData = function() {
             if (this.seat.category === 'b'){
                 return this.seat.category = category || 'buisiness';
             }else {
