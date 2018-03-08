@@ -1,0 +1,17 @@
+input {
+    width: 200px;
+    border-radius: 12px;
+    float: right;
+    padding: 6px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+h1 {
+    float: left;
+}
+div, img {
+    clear: both;
+}
+img {
+    width: 300px;
+}
