@@ -1,9 +1,9 @@
 'use strict';
 
-const {Genre} = require('./genre');
-const {Movie} = require('./movie');
-const {Program} = require('./program');
-const {Festival} = require('./festival');
+const {Genre} = require('./genre.js');
+const {Movie} = require('./movie.js');
+const {Program} = require('./program.js');
+const {Festival} = require('./festival.js');
 
 
 (function () {

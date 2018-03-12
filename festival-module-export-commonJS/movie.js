@@ -1,4 +1,4 @@
-const {Genre} = require('./genre');
+const {Genre} = require('./genre.js');
 
 function Movie(title, genreObj, length) {
     // properties

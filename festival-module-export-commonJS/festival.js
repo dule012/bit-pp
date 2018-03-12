@@ -1,7 +1,7 @@
 
-const {Genre} = require('./genre');
-const {Movie} = require('./movie');
-const {Program} = require('./program');
+const {Genre} = require('./genre.js');
+const {Movie} = require('./movie.js');
+const {Program} = require('./program.js');
 
 
 function Festival(name) {

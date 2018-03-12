@@ -1,6 +1,6 @@
 
-const {Genre} = require('./genre');
-const {Movie} = require('./movie');
+const {Genre} = require('./genre.js');
+const {Movie} = require('./movie.js');
 
 function Program(date) {
     // properties
