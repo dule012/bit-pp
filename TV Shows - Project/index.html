@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bit Show</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+        <style>
+            #content div {
+                float: left;
+                width: 33%;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            #content div img {
+                box-shadow: 0 0 5px 3px grey;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            ul {
+                position: absolute;
+                right: 40px;
+                top: 50px;
+                background: white;
+                list-style: none;
+            }
+
+           body {
+               background: rgb(226, 226, 226);
+           }
+
+            footer {
+                clear: left;
+                background: grey;
+                height: 40px;;
+            }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">Navbar</a>
+        <form class="form-inline">
+            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+    </nav>
+
+    <h1>Popular Shows</h1>
+
+    <ul id="search-result"> 
+    
+    </ul>
+
+    <div id="content">
+
+
+    </div>
+
+
+
+    <footer class="flex">Copyright  Bit Student 2018</footer>
+
+
+    <script type="module" src="./js/mainModule.js"></script>
+    <script type="module">
+        import {init, initSinglePage} from './js/mainModule.js';
+        $(init());
+    </script>
+</body>
+
+</html>
